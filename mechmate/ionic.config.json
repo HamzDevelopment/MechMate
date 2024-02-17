@@ -1,0 +1,7 @@
+{
+  "name": "mechmate",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

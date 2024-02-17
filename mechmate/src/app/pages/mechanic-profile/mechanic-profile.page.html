@@ -1,0 +1,47 @@
+<ion-content [fullscreen]="true">
+  <ion-img src="assets/logo.png" class="logo"></ion-img>
+  <ion-button routerLink="/" class="back-button">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+  </ion-button>
+
+  <div class="mechanic-container">
+    <ion-title>Your Mechanic Profile</ion-title>
+    <p><i>Update your info which will be displayed to the public in the mechanic list</i></p>
+
+    <ion-row style="justify-content: center;">
+      <ion-col size-md="12" size-lg="6" size-xl="6">
+        <form [formGroup]="mechanicForm">
+          <div class="ion-padding">
+            <ion-item lines="full" class="input-field">
+              <ion-input formControlName="name" placeholder="Name"></ion-input>
+            </ion-item>
+
+            <ion-item lines="full" class="input-field">
+              <ion-input formControlName="location" placeholder="Location"></ion-input>
+            </ion-item>
+
+            <ion-item lines="full" class="input-field">
+              <ion-input formControlName="mobile" placeholder="Mobile Number"></ion-input>
+            </ion-item>
+
+            <ion-item lines="full" class="input-field">
+              <ion-input formControlName="type" placeholder="Garage Type"></ion-input>
+            </ion-item>
+
+            <ion-item lines="full" class="input-field">
+              <ion-textarea formControlName="description" placeholder="Description"></ion-textarea>
+            </ion-item>
+
+            <ion-item lines="full" class="input-field">
+              <ion-label position="stacked">Profile Image</ion-label>
+              <input type="file" (change)="onFileSelected($event)" accept="image/*">
+            </ion-item>
+
+            <ion-button expand="block" (click)="saveProfile()" class="ion-margin-top">Save Profile</ion-button>
+          </div>
+        </form>
+      </ion-col>
+    </ion-row>
+
+  </div>
+</ion-content>

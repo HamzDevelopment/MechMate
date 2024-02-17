@@ -1,0 +1,35 @@
+<ion-app>
+  <ion-content class="landing-page">
+    <ion-img src="assets/logo.png" class="logo"></ion-img>
+    <ion-button routerLink="/mechanic-profile" class="profile-button" *ngIf="userIsLoggedIn && isMechanic">
+      <ion-icon name="person-outline"></ion-icon>
+    </ion-button>
+    <ion-button routerLink="/admin" class="admin-button" *ngIf="userIsLoggedIn && isAdmin">
+      Admin
+    </ion-button>
+    <ion-button (click)="logOut()" class="logout-button" *ngIf="userIsLoggedIn">
+      Log Out
+    </ion-button>
+    <ion-grid class="ion-no-padding ion-align-items-center ion-justify-content-center">
+      <ion-row style="justify-content: center;">
+        <ion-col size-md="12" size-lg="6" size-xl="6">
+          <div class="container">
+            <p><b>Your Trusted Vehicle Companion</b></p>
+            <p>MechMate redefines automotive care, seamlessly connecting you with local mechanics. Benefit from our AI Diagnostic tool for quick assessments and a Vehicle Maintenance Manager to keep all records in one place. Efficient, innovative, and user-friendly – MechMate is your go-to for all automotive needs.</p>
+            <ion-button color="primary" routerLink="/login" *ngIf="!userIsLoggedIn">Get Started</ion-button>
+            <ion-button color="primary" routerLink="/mechanic-list">Find a Mechanic</ion-button>
+            <ion-button color="primary" routerLink="/diagnostic" *ngIf="userIsLoggedIn">Diagnose with AI!</ion-button>
+            <br>
+            <ion-button color="primary" routerLink="/vehicles" *ngIf="userIsLoggedIn">Your Vehicles & Maintenance History</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-row style="justify-content: center;">
+      <ion-col size-md="12" size-lg="6" size-xl="6">
+        <app-feature-list [features]="features"></app-feature-list>
+      </ion-col>
+    </ion-row>
+  </ion-content>
+</ion-app>

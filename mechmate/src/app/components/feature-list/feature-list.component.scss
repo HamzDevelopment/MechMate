@@ -1,0 +1,16 @@
+.feature-card {
+    margin: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.feature-card ion-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon {
+    font-size: 2em;
+    margin-right: 10px;
+}

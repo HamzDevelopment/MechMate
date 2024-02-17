@@ -1,0 +1,54 @@
+<ion-content [fullscreen]="true">
+  <ion-img src="assets/logo.png" class="logo"></ion-img>
+  <ion-button routerLink="/" class="back-button">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+  </ion-button>
+  <div class="login-container">
+    <ion-title>Welcome Back</ion-title>
+    <p><i>Sign In to access your account</i></p>
+
+    <ion-row style="justify-content: center;">
+      <ion-col size-md="12" size-lg="6" size-xl="6">
+        <form [formGroup]="loginForm" novalidate>
+          <div class="ion-padding">
+            <ion-item lines="full" class="input-field">
+              <ion-input formControlName="email" placeholder="Email" clearInput></ion-input>
+              <ion-icon name="mail-outline" slot="start"></ion-icon>
+            </ion-item>
+            <br>
+            <ion-text *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('required')">
+              Email is required
+            </ion-text>
+            <ion-text *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.hasError('pattern')">
+              Email should be valid
+            </ion-text>
+
+            <ion-item lines="full" class="input-field">
+              <ion-input formControlName="password" type="password" placeholder="Password" clearInput></ion-input>
+              <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+            </ion-item>
+            <br>
+            <ion-text *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required')">
+              Password is required
+            </ion-text>
+            <ion-text *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('pattern')">
+              Password must meet the following criteria:
+              - Have at least one uppercase character
+              - Contain at least one number
+              - Be at least 8 characters long
+            </ion-text>
+
+            <div class="forgot-password">
+              <br>
+              <a [routerLink]="['/reset-password']">Forgot password?</a>
+              <br><br>
+              <a [routerLink]="['/signup']">Don't have an account?</a>
+            </div>
+
+            <ion-button expand="block" (click)="signIn()">Login</ion-button>
+          </div>
+        </form>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

@@ -1,0 +1,88 @@
+ion-content {
+  --ion-background-color: #fff;
+}
+
+ion-label {
+  overflow: visible !important;
+  white-space: normal !important;
+}
+
+.user-message,
+.assistant-message {
+  display: block;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+.user-message {
+  text-align: right;
+  color: blueviolet;
+}
+
+.assistant-message {
+  text-align: left;
+  color: lightseagreen;
+}
+
+ion-input {
+  text-align: left !important;
+  padding-left: 5px !important;
+  background-color: white !important;
+  color: black;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  --highlight-background: transparent;
+  --highlight-color-valid: transparent;
+  --highlight-color-invalid: transparent;
+}
+
+ion-toolbar {
+  padding: 15px;
+}
+
+.diagnostic-container {
+  text-align: center;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.logo {
+  width: 100%;
+  max-width: 120px;
+  margin-bottom: 10px;
+}
+
+ion-title {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #666;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+ion-text {
+  color: black;
+}
+
+item-native {
+  background-color: #fff !important;
+}
+
+.back-button {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+}
+
+ion-list {
+  padding: 15px;
+}

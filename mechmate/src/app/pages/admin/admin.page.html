@@ -1,0 +1,30 @@
+<ion-content [fullscreen]="true">
+  <ion-img src="assets/logo.png" class="logo"></ion-img>
+  <ion-button routerLink="/" class="back-button">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+  </ion-button>
+
+  <div class="admin-container">
+    <ion-title>Admin</ion-title>
+    <p><i>Make users mechanics, this allows the user to create a mechanic profile</i></p>
+    <ion-row style="justify-content: center;">
+      <ion-col size-md="12" size-lg="6" size-xl="6">
+        <ion-item lines="full" class="input-field">
+          <ion-label>Select User</ion-label>
+          <ion-select [(ngModel)]="selectedUser">
+            <ion-select-option *ngFor="let user of users" [value]="user.email">{{ user.email }}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <br>
+        <ion-button expand="block" (click)="makeUserMechanic()">Make Mechanic</ion-button>
+
+        <ion-list>
+          <ion-item *ngFor="let user of mechanicUsers">
+            <ion-label>{{ user.email }}</ion-label>
+            <ion-button color="danger" (click)="removeMechanicStatus(user.email)">Remove Mechanic</ion-button>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

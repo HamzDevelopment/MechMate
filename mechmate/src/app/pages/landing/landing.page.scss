@@ -1,0 +1,44 @@
+ion-content.landing-page {
+    --ion-background-color: #fff;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.logo {
+    width: 100%;
+    max-width: 120px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.logout-button {
+    position: absolute;
+    top: 25px;
+    right: 1pc;
+}
+
+.admin-button {
+    position: absolute;
+    top: 25px;
+    right: 8pc;
+}
+
+.profile-button {
+    position: absolute;
+    top: 25px;
+    right: 14pc;
+}

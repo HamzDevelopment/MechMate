@@ -1,0 +1,86 @@
+ion-content {
+  --ion-background-color: #fff;
+}
+
+.mechanic-container {
+  text-align: center;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.logo {
+  width: 100%;
+  max-width: 120px;
+  margin-bottom: 10px;
+}
+
+
+ion-title {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #666;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+ion-text {
+  color: black;
+}
+
+item-native {
+  background-color: #fff !important;
+}
+
+mechanic-item {
+  background-color: transparent !important;
+}
+
+.mechanic-card {
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.mechanic-avatar {
+  max-height: 200px;
+  margin: 0 auto;
+}
+
+.mechanic-header {
+  background-color: black;
+  color: #fff;
+}
+
+.mechanic-header ion-card-title {
+  font-size: 1.5em;
+}
+
+.mechanic-content {
+  padding: 10px;
+  background-color: white;
+}
+
+.mechanic-description {
+  color: #333;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.mechanic-info {
+  font-size: 1.1em;
+}
+
+.back-button {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+}
+
+ion-list {
+  background-color: white;
+}

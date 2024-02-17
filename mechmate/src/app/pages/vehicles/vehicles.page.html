@@ -1,0 +1,87 @@
+<ion-content [fullscreen]="true">
+  <ion-img src="assets/logo.png" class="logo"></ion-img>
+  <ion-button routerLink="/" class="back-button">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+  </ion-button>
+  <div class="vehicle-container">
+    <ion-title>Your Vehicle Information</ion-title>
+    <p><i>You can add any maintenance that is carried out to keep an easy to access record.</i></p>
+    <ion-row style="justify-content: center;">
+      <ion-col size-md="12" size-sm="12" size-lg="6" size-xl="6">
+        <ion-card class="form-card">
+          <form [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
+            <ion-item>
+              <ion-label>Make:</ion-label>
+              <ion-input formControlName="make"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label>Model:</ion-label>
+              <ion-input formControlName="model"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Registration:</ion-label>
+              <ion-input formControlName="registration"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Date:</ion-label>
+              <ion-input type="date" formControlName="date"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Service Type:</ion-label>
+              <ion-input formControlName="serviceType"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Cost:</ion-label>
+              <ion-input formControlName="cost"></ion-input>
+            </ion-item>
+
+            <ion-item>
+              <ion-label>Other Info:</ion-label>
+              <ion-textarea formControlName="otherInfo"></ion-textarea>
+            </ion-item>
+
+            <ion-button type="submit" [disabled]="!vehicleForm.valid">Submit</ion-button>
+          </form>
+        </ion-card>
+      </ion-col>
+      <ion-col size-md="12" size-lg="6" size-xl="6">
+        <ion-card *ngFor="let vehicle of vehicleInfo">
+          <ion-card-header>
+            <ion-card-title><b>Maintenance History:</b> {{ vehicle.Make }} {{ vehicle.Model }} | {{ vehicle.Registration
+              }}
+              <ion-button color="danger" size="small" (click)="deleteVehicle(vehicle.Registration)">
+                <ion-icon name="trash-outline"></ion-icon>
+              </ion-button>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-grid>
+              <ion-row>
+                <ion-col>Date</ion-col>
+                <ion-col>Service Type</ion-col>
+                <ion-col>Cost</ion-col>
+                <ion-col>Other Info</ion-col>
+                <ion-col></ion-col>
+              </ion-row>
+              <ion-row *ngFor="let maintenance of getMaintenanceHistoryForVehicle(vehicle.Registration)">
+                <ion-col>{{ maintenance.date }}</ion-col>
+                <ion-col>{{ maintenance.serviceType }}</ion-col>
+                <ion-col>€{{ maintenance.cost }}</ion-col>
+                <ion-col>{{ maintenance.otherInfo }}</ion-col>
+                <ion-col>
+                  <ion-button color="danger" size="small" (click)="deleteMaintenanceRecord(maintenance.id)">
+                    Delete
+                  </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

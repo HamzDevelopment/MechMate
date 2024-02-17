@@ -1,0 +1,31 @@
+<ion-content [fullscreen]="true">
+  <ion-img src="assets/logo.png" class="logo"></ion-img>
+  <ion-button routerLink="/" class="back-button">
+    <ion-icon name="chevron-back-outline"></ion-icon>
+  </ion-button>
+  <div class="mechanic-container">
+    <ion-title>Mechanics List</ion-title>
+    <ion-list>
+      <ion-row>
+        <ion-col size="12" size-md="4" *ngFor="let mechanic of mechanics">
+          <ion-card class="mechanic-card">
+            <ion-img [src]="mechanic.image" class="mechanic-avatar"></ion-img>
+
+            <ion-card-header class="mechanic-header">
+              <ion-card-title>{{ mechanic.name }}</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content class="mechanic-content">
+              <p class="mechanic-description">{{ mechanic.description }}</p>
+              <ion-text class="mechanic-info" color="medium">Location: {{ mechanic.location }}</ion-text>
+              <br>
+              <ion-text class="mechanic-info" color="medium">Mobile: {{ mechanic.mobile }}</ion-text>
+              <br>
+              <ion-text class="mechanic-info" color="medium">Type: {{ mechanic.type }}</ion-text>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-list>
+  </div>
+</ion-content>

@@ -1,0 +1,9 @@
+<ion-card class="feature-card" *ngFor="let feature of features">
+  <ion-card-header>
+    <ion-icon [name]="feature.icon" class="feature-icon"></ion-icon>
+    <ion-card-title>{{ feature.title }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    {{ feature.description }}
+  </ion-card-content>
+</ion-card>

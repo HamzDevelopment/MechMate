@@ -1,0 +1,55 @@
+ion-content {
+  --ion-background-color: #fff;
+}
+
+.vehicle-container {
+  text-align: center;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+
+.logo {
+  width: 100%;
+  max-width: 120px;
+  margin-bottom: 10px;
+}
+
+ion-title {
+  color: #333;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+p {
+  color: #666;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+ion-text {
+  color: black;
+}
+
+ion-grid {
+  width: 100%;
+  padding: 8px;
+
+  ion-row {
+    border-bottom: 1px solid #ccc;
+
+    ion-col {
+      padding: 8px;
+    }
+  }
+}
+
+.back-button {
+  position: absolute;
+  top: 25px;
+  right: 20px;
+}
+
+.form-card {
+  padding: 15px;
+}
